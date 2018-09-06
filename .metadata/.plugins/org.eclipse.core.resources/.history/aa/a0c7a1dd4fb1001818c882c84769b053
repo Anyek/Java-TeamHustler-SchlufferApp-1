@@ -1,0 +1,40 @@
+package com.example.demo.messages;
+
+public class MessageSendModel {
+
+    private Long toId;
+    
+    private String from;
+    
+    private String to;
+    
+    private String date;
+
+    private String subject;
+
+    private String message;
+
+    public Long getToId() {
+        return toId;
+    }
+
+    public void setToId(Long toId) {
+        this.toId = toId;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+}
