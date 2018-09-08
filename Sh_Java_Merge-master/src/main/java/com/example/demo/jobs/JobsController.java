@@ -44,7 +44,7 @@ public class JobsController {
 		
 	}
 	@PutMapping ("/{id}")
-    public ResponseEntity<Job> updateJob(@PathVariable int id, @RequestBody Job updateJob){
+    public ResponseEntity<Job> updateJob(@PathVariable Integer id, @RequestBody Job updateJob){
 
         Job job = jobsRepository.findById(id).orElse(null);
         

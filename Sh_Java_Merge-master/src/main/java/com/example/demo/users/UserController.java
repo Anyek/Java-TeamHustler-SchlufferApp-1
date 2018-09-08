@@ -59,24 +59,18 @@ public class UserController {
 
 	@PostMapping("/logout")
 	public void logoutUser(@RequestBody UserModel userModel) {
-//		for (UserModel u : userRepository.findAll()) {
 			HttpSession session = getUserId();
 			if (session.getAttribute("userId") != null) {
 				session.removeAttribute("userId");
 				return;
 			}
 		}
-//	}
 
 	private HttpSession getUserId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-////        for(UserModel u: userRepository.findAll()) {
-//		return;
-//	}
-////        }
 
 	@PostMapping("/signup")
 	public UserModel addUser(@RequestBody UserModel userModel) {
@@ -84,8 +78,8 @@ public class UserController {
 		return userModel;
 	}
 
-	@DeleteMapping("/{UserId}")
-	public void deleteUser(@PathVariable int UserId) {
-		userRepository.deleteById(UserId);
+	@DeleteMapping("/{userId}")
+	public void deleteUser(@PathVariable Integer userId) {
+		userRepository.deleteById(userId);
 	}
 }
