@@ -37,7 +37,7 @@ public class UserController {
 
 	@GetMapping("/username/{userId}")
 	public UserModel getUserByUserId(@PathVariable Integer userId) {
-		return userRepository.findByUserId(userId);
+		return userRepository.findById(userId).orElse(null);
 	}
 
 	@GetMapping("/{email}")

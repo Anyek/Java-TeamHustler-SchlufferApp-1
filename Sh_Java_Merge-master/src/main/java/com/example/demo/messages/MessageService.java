@@ -77,13 +77,15 @@ public class MessageService {
     }
     
 	public void send(MessageSendModel messageSendModel) throws ServiceErrorException {
-		final List<UserModel> usersByUserId = userRepository.getUsersByUserId(messageSendModel.getToId().intValue());
-		if (usersByUserId.size() != 1) {
-			throw new ServiceErrorException("User not found!");
-		}
+//		final List<UserModel> usersByUserId = userRepository.getUsersByUserId(messageSendModel.getToId().intValue());
+		UserModel author = userRepository.findById(messageSendModel.getFromId()).orElse(null);
+		UserModel toUser = userRepository.findById(messageSendModel.getToId()).orElse(null);
+//		if (usersByUserId.size() != 1) {;
+//			throw new ServiceErrorException("User not found!");
+//		}
 		Message message = new Message();
-		message.setUsername(usersByUserId.get(0));
-		message.setAuthor(usersByUserId.get(0));
+		message.setToUser(toUser);
+		message.setAuthor(author);
 		message.setCreateDate(new Date());
 		message.setSubject(messageSendModel.getSubject());
 		message.setMessage(messageSendModel.getMessage());

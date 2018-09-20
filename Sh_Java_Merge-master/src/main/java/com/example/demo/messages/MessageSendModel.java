@@ -2,20 +2,28 @@ package com.example.demo.messages;
 
 public class MessageSendModel {
 
-    private Long toId;
+    private Integer toId;
+    
+    private Integer fromId;
     
     private String author;
     
     private String toUser;
     
-    private String date;
+	private String date;
 
     private String subject;
     
     private String message;
 
     
-    
+    public Integer getFromId() {
+		return fromId;
+	}
+
+	public void setFromId(Integer fromId) {
+		this.fromId = fromId;
+	}
     
    
 	public String getAuthor() {
@@ -43,11 +51,11 @@ public class MessageSendModel {
 	}
 
 
-    public Long getToId() {
+    public Integer getToId() {
         return toId;
     }
 
-    public void setToId(Long toId) {
+    public void setToId(Integer toId) {
         this.toId = toId;
     }
 
